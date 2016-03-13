@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_7.jpg">
 <meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_8.jpg">
 <meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_9.jpg">
-<meta property="og:updated_time" content="2016-03-13T12:37:35.065Z">
+<meta property="og:updated_time" content="2016-03-13T12:44:04.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下的防篡改技巧-2">
 <meta name="twitter:description" content="Linux下的防篡改技巧-2Auth: winger@gnusec今天介绍LINUX下的WEB防篡改技巧">
@@ -133,7 +133,7 @@
 <p>窜改主页后, 发现告警日志记录. 访问被篡改页面, 返回<code>403</code>禁止访问提示.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_7.jpg" alt="ngx_http_web_defacement_7.jpg" title=""></p>
 <p>接着继续修改配置文件, 开启恢复模式, 保证篡改网页后, 服务器依然能返回篡改之前的页面内容.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_8.jpg" alt="ngx_http_web_defacement_8.jpg" title=""></p>
 <p>再次篡改主页, 继续发现告警记录. 访问被篡改页面, 返回篡改前的内容.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_9.jpg" alt="ngx_http_web_defacement_9.jpg" title=""></p>
-<p>至此, WEB防篡改系统就已经搭建完成了. 跟多的自定义参数和功能请参考SEnginx官网文档.</p>
+<p>至此, WEB防篡改系统已经搭建完成. 更多的自定义参数和功能请参考SEnginx官网文档.</p>
 <h5 id="REF"><a href="#REF" class="headerlink" title="REF"></a>REF</h5><p><a href="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/nginx.conf">配置文件</a><br><a href="http://www.senginx.org/cn/index.php/安装" target="_blank" rel="external">SEnginx安装</a><br><a href="http://www.senginx.org/cn/index.php/下载" target="_blank" rel="external">SEnginx下载</a></p>
 
       
