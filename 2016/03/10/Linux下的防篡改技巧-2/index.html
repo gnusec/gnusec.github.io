@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux下的防篡改技巧-2 | GNUSEC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux下的防篡改技巧-2Auth: winger@gnusec今天介绍LINUX下的WEB防篡改方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下的防篡改技巧-2">
+<meta property="og:url" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/index.html">
+<meta property="og:site_name" content="GNUSEC">
+<meta property="og:description" content="Linux下的防篡改技巧-2Auth: winger@gnusec今天介绍LINUX下的WEB防篡改方法">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_1.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_3.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_4.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_5.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_6.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_7.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_8.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_9.jpg">
+<meta property="og:updated_time" content="2016-03-13T11:51:38.686Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux下的防篡改技巧-2">
+<meta name="twitter:description" content="Linux下的防篡改技巧-2Auth: winger@gnusec今天介绍LINUX下的WEB防篡改方法">
+<meta name="twitter:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_1.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="GNUSEC" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">GNUSEC</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">OpenSource Security Movement</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="gnusec.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-Linux下的防篡改技巧-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/10/Linux下的防篡改技巧-2/" class="article-date">
+  <time datetime="2016-03-10T13:55:49.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux下的防篡改技巧-2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux下的防篡改技巧-2"><a href="#Linux下的防篡改技巧-2" class="headerlink" title="Linux下的防篡改技巧-2"></a>Linux下的防篡改技巧-2</h2><h5 id="Auth-winger-gnusec"><a href="#Auth-winger-gnusec" class="headerlink" title="Auth: winger@gnusec"></a><strong>Auth: winger@gnusec</strong></h5><h6 id="今天介绍LINUX下的WEB防篡改方法"><a href="#今天介绍LINUX下的WEB防篡改方法" class="headerlink" title="今天介绍LINUX下的WEB防篡改方法"></a>今天介绍LINUX下的WEB防篡改方法</h6><a id="more"></a>
+<h4 id="WEB防篡改"><a href="#WEB防篡改" class="headerlink" title="WEB防篡改"></a>WEB防篡改</h4><p>上一篇我介绍了简单的文件反篡改方法.<br>今天就介绍一款”亡羊补牢”型的WEB防篡改系统: <strong>SEnignx</strong>. 作为为数不多的一款国人开源安全项目, 虽然跟新频度不是很快, 不过项目中的一些安全技术实现思路和安全理念还是非常有借鉴意义的.  再次感谢他们的开源精神^_^.<br>为什么叫”亡羊补牢”? 因为这是一种曲线救国式的安全策略(数据流截断+动态还原). 很多时候, 我们无法保证文件系统是安全的, 因为总有可能被攻击成功. 这时候, 就彻底结束了吗?  答案是否定的. 我们还有”最后一公里”. </p>
+<p>在服务器到用户之间这段”最后一公里”,也许就能成为我们挽回败局的关键一步.<br>如果文件被改变了, 我们只要不解析它, 同时再动态还原, 不就可以了吗? </p>
+<img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_1.jpg" alt="ngx_http_web_defacement_1.jpg" title="">
+<h4 id="SEnginx"><a href="#SEnginx" class="headerlink" title="SEnginx"></a>SEnginx</h4><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>SEnginx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主页</td>
+<td><a href="http://www.senginx.org" target="_blank" rel="external">http://www.senginx.org</a></td>
+</tr>
+<tr>
+<td>简介</td>
+<td>SEnginx是由东软集团网络安全事业部发起的开源项目， SEnginx为Security Enhanced nginx之意。SEnginx是在原始的nginx的基础上，整合了多种负载均衡和安全类别的第三方模块，以及东软安全为nginx开发的若干模块，主要在Web安全方面和负载均衡方面进行了功能增强。SEnginx的侧重点在于HTTP的反向代理和Web安全功能，我们致力于把SEnginx打造成一个稳定、高效的带安全防御功能的Web应用交付开源软件。同时我们欢迎大家参与SEnginx的开发，为互联网安全贡献力量。</td>
+</tr>
+</tbody>
+</table>
+<p>SEnginx的安装和原始nginx类似，只不过需要使用se-configure.sh脚本来生成Makefile。<br>se-configure.sh脚本可以接受原始的nginx configure.sh参数。</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@]</span>./se-configure.sh --prefix=/path/<span class="keyword">to</span>/some/where</span><br><span class="line">[root<span class="symbol">@]make</span></span><br><span class="line">[root<span class="symbol">@]make</span> install</span><br><span class="line">...</span><br><span class="line">[root<span class="symbol">@]</span><span class="meta"># /usr/local/nginx/sbin/nginx -v</span></span><br><span class="line">nginx version: senginx/<span class="number">1.6</span><span class="number">.2</span></span><br><span class="line">[root<span class="symbol">@CentOS</span>-S1 nginx]<span class="meta"># cd /usr/local/nginx/</span></span><br><span class="line">[root<span class="symbol">@CentOS</span>-S1 nginx]<span class="meta"># cp /home/test/soft/senginx-1.6.2/web-defacement.pl .</span></span><br><span class="line">[root<span class="symbol">@CentOS</span>-S1 nginx]<span class="meta"># mkdir recover</span></span><br></pre></td></tr></table></figure>
+<p>将所有网站代码拷贝到备份目录 <code>recover</code>.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_3.jpg" alt="ngx_http_web_defacement_3.jpg" title=""></p>
+<p>为所有网站代码生成hash校验库.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_4.jpg" alt="ngx_http_web_defacement_4.jpg" title=""></p>
+<p>修改senginx配置文件(这里是/usr/local/nginx/conf/nginx.conf), 开启防篡改功能.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_5.jpg" alt="ngx_http_web_defacement_5.jpg" title=""></p>
+<p>窜改主页前. 一切正常.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_6.jpg" alt="ngx_http_web_defacement_6.jpg" title=""></p>
+<p>窜改主页后, 发现告警日志记录. 访问被篡改页面, 返回<code>403</code>禁止访问提示.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_7.jpg" alt="ngx_http_web_defacement_7.jpg" title=""></p>
+<p>接着继续修改配置文件, 开启恢复模式, 保证篡改网页后, 服务器依然能返回篡改之前的页面内容.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_8.jpg" alt="ngx_http_web_defacement_8.jpg" title=""></p>
+<p>再次篡改主页, 继续发现告警记录. 访问被篡改页面, 返回篡改前的内容.<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_9.jpg" alt="ngx_http_web_defacement_9.jpg" title=""></p>
+<p>至此, WEB防篡改系统就已经搭建完成. 跟多的自定义参数和功能可参考SEnginx官网文档.</p>
+<h5 id="REF"><a href="#REF" class="headerlink" title="REF"></a>REF</h5>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/" data-id="cilqir9zn00032kv7sn83qpgq" class="article-share-link" data-share="baidu">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tamper-resistant-防篡改-Linux-SEnginx/">tamper-resistant, 防篡改, Linux, SEnginx</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/07/Linux下的防篡改技巧-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Linux下的防篡改技巧-1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNU/">GNU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ransomware/">Ransomware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SECROAD/">SECROAD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tamper-resistant-防篡改-Linux-SEnginx/">tamper-resistant, 防篡改, Linux, SEnginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tamper-resistant-防篡改-Linux-权限-chattr/">tamper-resistant, 防篡改, Linux, 权限, chattr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/勒索软件/">勒索软件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全路漫漫/">安全路漫漫</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GNU/" style="font-size: 10px;">GNU</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/Ransomware/" style="font-size: 10px;">Ransomware</a> <a href="/tags/SECROAD/" style="font-size: 10px;">SECROAD</a> <a href="/tags/tamper-resistant-防篡改-Linux-SEnginx/" style="font-size: 10px;">tamper-resistant, 防篡改, Linux, SEnginx</a> <a href="/tags/tamper-resistant-防篡改-Linux-权限-chattr/" style="font-size: 10px;">tamper-resistant, 防篡改, Linux, 权限, chattr</a> <a href="/tags/勒索软件/" style="font-size: 10px;">勒索软件</a> <a href="/tags/安全路漫漫/" style="font-size: 10px;">安全路漫漫</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/03/10/Linux下的防篡改技巧-2/">Linux下的防篡改技巧-2</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/07/Linux下的防篡改技巧-1/">Linux下的防篡改技巧-1</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/06/安全路漫漫-勒索软件/">安全路漫漫-勒索软件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/16/Good Day/">Good day</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://www.gnu.org" target="_blank">GNU</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Winger<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>window._bd_share_config={"common":{},"share":{"bdCustomStyle":"/css/bdshare.css"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
