@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_7.jpg">
 <meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_8.jpg">
 <meta property="og:image" content="http://gnusec.github.io/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_9.jpg">
-<meta property="og:updated_time" content="2016-03-13T12:33:07.570Z">
+<meta property="og:updated_time" content="2016-03-13T12:37:35.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下的防篡改技巧-2">
 <meta name="twitter:description" content="Linux下的防篡改技巧-2Auth: winger@gnusec今天介绍LINUX下的WEB防篡改技巧">
@@ -102,10 +102,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Linux下的防篡改技巧-2"><a href="#Linux下的防篡改技巧-2" class="headerlink" title="Linux下的防篡改技巧-2"></a>Linux下的防篡改技巧-2</h2><h5 id="Auth-winger-gnusec"><a href="#Auth-winger-gnusec" class="headerlink" title="Auth: winger@gnusec"></a><strong>Auth: winger@gnusec</strong></h5><h6 id="今天介绍LINUX下的WEB防篡改技巧"><a href="#今天介绍LINUX下的WEB防篡改技巧" class="headerlink" title="今天介绍LINUX下的WEB防篡改技巧"></a>今天介绍LINUX下的WEB防篡改技巧</h6><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_1.jpg" alt="ngx_http_web_defacement_1.jpg" title="">
-<a id="more"></a>
+        <h2 id="Linux下的防篡改技巧-2"><a href="#Linux下的防篡改技巧-2" class="headerlink" title="Linux下的防篡改技巧-2"></a>Linux下的防篡改技巧-2</h2><h5 id="Auth-winger-gnusec"><a href="#Auth-winger-gnusec" class="headerlink" title="Auth: winger@gnusec"></a><strong>Auth: winger@gnusec</strong></h5><h6 id="今天介绍LINUX下的WEB防篡改技巧"><a href="#今天介绍LINUX下的WEB防篡改技巧" class="headerlink" title="今天介绍LINUX下的WEB防篡改技巧"></a>今天介绍LINUX下的WEB防篡改技巧</h6><a id="more"></a>
 <h4 id="WEB防篡改"><a href="#WEB防篡改" class="headerlink" title="WEB防篡改"></a>WEB防篡改</h4><p>上一篇我们介绍了简单的文件反篡改方法.<br>今天就介绍另一款”亡羊补牢”型的WEB防篡改系统: <strong>SEnignx</strong>. 做为为数不多的一个国人开源安全项目, 虽然跟新速度不是很快, 不过项目中的安全思路还是非常值得借鉴的.  再次感谢他们的开源精神^_^.<br>为什么叫”亡羊补牢”? 因为这是一种曲线救国式的安全策略(发生在恶意篡改之后). 很多时候, 我们无法保证文件系统一直是安全的, 因为它总有可能被攻破. 而这时候, 就结束了吗?  答案是否定的. 我们还有”最后一公里”. </p>
 <p>在服务器到用户之间这段数据旅程里, 我们还是有机会反败为胜的.<br>如果文件被改变了, 我们只要不解析它, 不就可以了吗? </p>
+<p>简单的WEB动态反篡改系统原理图:<br><img src="/2016/03/10/Linux下的防篡改技巧-2/ngx_http_web_defacement_1.jpg" alt="ngx_http_web_defacement_1.jpg" title=""></p>
 <h4 id="SEnginx"><a href="#SEnginx" class="headerlink" title="SEnginx"></a>SEnginx</h4><table>
 <thead>
 <tr>
