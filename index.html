@@ -96,67 +96,12 @@
       
         <hr>
 <pre><code>兵者，诡道也。故能而示之不能，用而示之不用，近而示之远，远而示之近。利而诱之，乱而取之，实而备之，强而避之，怒而挠之，卑而骄之，佚而劳之，亲而离之。攻其无备，出其不意。此兵家之胜，不可先传也。---《孙子兵法始计篇》
-</code></pre><h3 id="什么是Red-Team？"><a href="#什么是Red-Team？" class="headerlink" title="什么是Red Team？"></a>什么是Red Team？</h3><p>下面是万能WIKI的解释</p>
-<blockquote>
-<p>A <strong>red team</strong> is an independent group that challenges an organization to improve its effectiveness. The United States intelligence community (military and civilian) has red teams that explore alternative futures and write articles as if they were foreign world leaders.[citation needed] Little formal doctrine or publications about Red Teaming in the military exist.</p>
-</blockquote>
-<p>以及</p>
-<blockquote>
-<p>Penetration testers assess organization security, often unbeknownst to client staff. This type of Red Team provides a more realistic picture of the security readiness than exercises, role playing, or announced assessments. The Red Team may trigger active controls and countermeasures within a given operational environment.</p>
-</blockquote>
-<p>“<strong>红队</strong>“最早指的是对特定机构（军队，政府）发起挑战”行动”的独立团队， 目的是检测整个系统的被攻击风险和应对风险的能力。通过模拟攻击挖掘内部缺陷，以预防外部的真实攻击。其涉及的很多东西（spy，riots），与我们今天的企业安全管理和社会工程学攻击有着非常相似的地方。虽然官方极少披露其相关信息, 但他们却是真实的存在。</p>
-<p>而在网络安全领域， “<strong>红队</strong>“的化身则是，那些拥有超凡攻击技能的”黑客军团”。</p>
-<p>慢着，慢着， 你说渗透？ 那小白门有话要说了：</p>
-<p><code>既然 渗透==扫描 并且 红队==渗透， 那 红队==扫描</code></p>
-<p><strong>囧！</strong><br>感谢”铁盒子”，此时我竟无言以对。<br>科普前先让我们看一个真实发生的案例:</p>
-<p>以下内容经过防和谐处理。</p>
-<blockquote>
-<p>在阿富汗战争期间，一队美军被派遣去清剿当地的塔里班分子。但是这些kb份子在特战队员来之前，就悄悄的混入平民只中隐匿了起来。这时候，队员们除了和村中的”长辈”沟通之外，就没有更好的方法了。这时候，他们附近的一组<strong>RED TEAM</strong>(老SF)帮助了他们. 由于他们和当地的平民合作密切。所以想了一个很绝的方法，把这些kb份子逮出来。他们让当地人和队伍中的一些小个子穿上女人们的布卡，然后走在大街上与男人名幽会，畅谈。这时候塔里班就按耐不住，纷纷跳出来，要活剐了那可怜的”女人”.(塔里办的宗教信仰, 决定了他们无法忍受这种行为，这也恰恰成为他们的弱点。)</p>
-</blockquote>
-<p>这个案例印证了我们开头的那段话:”<strong>兵者，诡道也</strong>“.</p>
-<p>网络战场与现实战场比起来, 有过之而不及。</p>
-<p>“<strong>RED TEAM</strong>“ (红对挑战)， 涵盖的范围甚广(传统的渗透测试，属于其中的一种具体实现)。意思形态上，是一种对抗的抽象。落地实施上是对抗团队和 <strong>CERT</strong> (应急相应机构)的构建。</p>
-<p>可以预想在需求程度上，ZF和重要组织对”<strong>RED TEAM</strong>“的需求是最紧迫的。 因为那是真正<strong>生死</strong>攸关的.</p>
-<p>当你知道类似的手法可以消灭对手的时候， 你会不担心它也能消灭你吗？</p>
-<p>知道的越多，就越恐惧。</p>
-<p>正所谓”<strong>生于忧患，死于安乐</strong>“。国外在这一块的重视很大程度上也源于其，深知其”<strong>害</strong>“.</p>
-<p>FireEye 在前不久推出了 Red Team 业务.</p>
-<p>和传统的渗透测试相比, 有两个鲜明的特点:</p>
-<ul>
-<li><strong>目标定制话</strong></li>
-<li><strong>内容定制化</strong></li>
-</ul>
-<p>随着新的业务,新架构,飞速增长的今天, 统一化的安全防御思路渐显疲态. 而随着安全挑战的越发的多元化 , <strong>安全定制化</strong>需求也随之愈加突出. 因为任何一种技术都需要在特定的应用场景下才能发挥其真正的价值, 定制化恰好能将”<strong>安全技术</strong>“与”新兴的<strong>安全需求</strong>“很好的关联起来.</p>
-<h4 id="目标定制话"><a href="#目标定制话" class="headerlink" title="目标定制话"></a>目标定制话</h4><p>我们现在常见的<strong>渗透测试</strong>，只是对<strong>RED_TEAM</strong>的一个具像化实现. 大部分传统渗透测试的目标是以获取核心数据和重要权限为目的。<br>而<strong>RED_TEAM</strong>本质是<strong>博弈</strong>的抽象。具体的挑战目标可以”百无禁忌”。</p>
-<ul>
-<li>窃取行政人员和开发者邮箱</li>
-<li>获取商业机密和关键业务数据</li>
-<li>获取IOT设备，医疗设备和生产设备的控制权</li>
-<li>获取特定网络区域内的监控节点，持续性对外输送信息</li>
-<li>伪装成客户和工作人员通过检测机制取得有价值的额外数据</li>
-<li>取得隔离网络内的数据</li>
-<li>伪造身份和权限，干预影响核心业务运作</li>
-<li>物理入侵</li>
-<li>毁灭式攻击</li>
-</ul>
-<p>任何一种能威胁现有体系运作的攻击场景都可以被作为”<strong>RED TEAM</strong>“的挑战目标。而其成功性往往都很高!</p>
-<h4 id="内容定制化"><a href="#内容定制化" class="headerlink" title="内容定制化"></a>内容定制化</h4><p>这里结合我们团队当前的渗透方向和对未来网络安全技术的趋势总结了一个扩展版的，”RED_TEAM” 挑战图 。</p>
-<img src="/2016/04/01/关于RED-TEAM/RED_TEAM.png" alt="RED_TEAM.png" title="">
-<p>其中的很多问题点, 在当今的网络防御体系中都没有很好的解决方案。 社会工程学攻击, 工控安全, IOT安全，业务安全,移动安全, 都是这两年可预见的安全趋势。</p>
-<p><strong>红队挑战</strong>是一种持续性的安全理念. 一次性的渗透测试只能评估当下目标组织的安全能力。唯有持续性的安全挑战才能将风险降到最低。</p>
-<p>目前大部分安全防御体系和安全标准都是基于传统的防御性思维制定的。但随着基础安全建设的日益完善的同时,传统安全思维的短板也愈发凸显，各种维度的攻击思路推陈出新,手法日新月异，一成不变的防御体系显得如此的不堪一击。一个非常好的例子就是, 正式渗透项目中社工的成功率几乎接近于100%，而固有安全防御体系对此几乎毫无作用。</p>
-<h4 id="企业落地"><a href="#企业落地" class="headerlink" title="企业落地"></a>企业落地</h4><ol>
-<li><p>组建”RED TEAM”和”BLUE TEAM”. 长期，持续的对企业资产做针对性的攻防对抗和安全监控. 关于团队的构建方法和角色分配会在后续的文章中介绍。</p>
-</li>
-<li><p>构建应急相应中心(CERT可由红蓝队员辅助),  遇到风险和攻击后可快速修复漏洞并反制攻击者。</p>
-</li>
-<li><p>在关键部门和位置搭配”观察者”, 记录”红队挑战”过程中, 各个部门的相应情况和安全问题。 后续可对攻击链条中每一个沦陷节点做针对性的安全建设指导和监督。 同时评估整个企业体系的安全防控能力(蓝队)。</p>
-</li>
-<li><p>雇佣外部 “RED TEAM” 做模拟攻击. 定制攻击目标, 并记录测试过程中, 整个组织的安全响应能力和防御能力。</p>
-</li>
-</ol>
-<p><strong><code>切记,恐惧会随着时间慢慢减弱，但是危险不会减少。</code></strong></p>
-
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/01/关于RED-TEAM/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
