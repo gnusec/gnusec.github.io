@@ -4,17 +4,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 权限 | GNUSEC</title>
+  <title>Docker的小问题,安全的大问题 | GNUSEC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="For FreeDom">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GNUSEC">
-<meta property="og:url" content="http://gnusec.github.io/tags/权限/index.html">
+  <meta name="description" content="Docker的小问题,安全的大问题Auth: winger@gnusec
+安全问题无出不在, Docker配置需倍加小心. 未授权访问, 秒秒钟被黑.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker的小问题,安全的大问题">
+<meta property="og:url" content="http://gnusec.github.io/2016/05/17/Docker未授权访问/index.html">
 <meta property="og:site_name" content="GNUSEC">
-<meta property="og:description" content="For FreeDom">
+<meta property="og:description" content="Docker的小问题,安全的大问题Auth: winger@gnusec
+安全问题无出不在, Docker配置需倍加小心. 未授权访问, 秒秒钟被黑.">
+<meta property="og:image" content="http://gnusec.github.io/2016/05/17/Docker未授权访问/1_docker_manual.png">
+<meta property="og:image" content="http://gnusec.github.io/2016/05/17/Docker未授权访问/1_docker_cn.jpg">
+<meta property="og:image" content="http://gnusec.github.io/2016/05/17/Docker未授权访问/3_hehe.png">
+<meta property="og:image" content="http://gnusec.github.io/2016/05/17/Docker未授权访问/2_Linux_Docker_CN_2.png">
+<meta property="og:image" content="http://gnusec.github.io/2016/05/17/Docker未授权访问/4_LInux_Docker_test.png">
+<meta property="og:updated_time" content="2016-05-17T15:28:34.686Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GNUSEC">
-<meta name="twitter:description" content="For FreeDom">
+<meta name="twitter:title" content="Docker的小问题,安全的大问题">
+<meta name="twitter:description" content="Docker的小问题,安全的大问题Auth: winger@gnusec
+安全问题无出不在, Docker配置需倍加小心. 未授权访问, 秒秒钟被黑.">
+<meta name="twitter:image" content="http://gnusec.github.io/2016/05/17/Docker未授权访问/1_docker_manual.png">
   
     <link rel="alternative" href="/atom.xml" title="GNUSEC" type="application/atom+xml">
   
@@ -70,39 +80,120 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/03/07/Linux下的防篡改技巧-1/" class="archive-article-date">
-  <time datetime="2016-03-07T12:04:17.000Z" itemprop="datePublished">3月 7</time>
+      <section id="main"><article id="post-Docker未授权访问" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/17/Docker未授权访问/" class="article-date">
+  <time datetime="2016-05-17T15:16:22.000Z" itemprop="datePublished">2016-05-17</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/07/Linux下的防篡改技巧-1/">Linux下的防篡改技巧-1</a>
+    <h1 class="article-title" itemprop="name">
+      Docker的小问题,安全的大问题
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Docker的小问题-安全的大问题"><a href="#Docker的小问题-安全的大问题" class="headerlink" title="Docker的小问题,安全的大问题"></a>Docker的小问题,安全的大问题</h2><h5 id="Auth-winger-gnusec"><a href="#Auth-winger-gnusec" class="headerlink" title="Auth: winger@gnusec"></a><strong>Auth: winger@gnusec</strong></h5><hr>
+<pre><code>安全问题无出不在, Docker配置需倍加小心. 未授权访问, 秒秒钟被黑.
+</code></pre><a id="more"></a>
+<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><h3 id="Docker-Remote-API"><a href="#Docker-Remote-API" class="headerlink" title="Docker Remote API"></a>Docker Remote API</h3><p>Docker 守护程序可以监听客户端发起的<code>Docker Remote API</code>请求. 支持三种不同的Socket: <strong>unix</strong>, <strong>tcp</strong>, 和 <strong>fd</strong>.<br>这本来是个很好的功能, 特别是用来做集群管理的时候. 但是问题出在, 很多人在设置监听的时候, 并没有考虑安全问题, 只是简单的<strong>依葫芦画瓢</strong>开启了端口, 却没有开启验证(那些开0.0.0.0的你也是够了$_$!!!).<br>如果认真看完官方文档, 你会发现人家早就考虑了这个问题. 还严重提醒了.<br><img src="/2016/05/17/Docker未授权访问/1_docker_manual.png" alt="1_docker_manual.png" title=""><br>然后到国内呢?<br>变成这样了<br><img src="/2016/05/17/Docker未授权访问/1_docker_cn.jpg" alt="1_docker_cn.jpg" title=""></p>
+<p><strong>——简单,快捷,有活力——你在逗我吗——</strong><br><img src="/2016/05/17/Docker未授权访问/3_hehe.png" alt="3_hehe.png" title=""></p>
+<p>当然也有比较靠谱的版本</p>
+<img src="/2016/05/17/Docker未授权访问/2_Linux_Docker_CN_2.png" alt="2_Linux_Docker_CN_2.png" title="">
+<h4 id="漏洞原型"><a href="#漏洞原型" class="headerlink" title="漏洞原型"></a>漏洞原型</h4><blockquote>
+<p>$ sudo  docker -H 0.0.0.0:5555 -d &amp;</p>
+</blockquote>
+<h4 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h4><p>由于未开启验证, 简单连接即可执行命令</p>
+<blockquote>
+<p>docker -H tcp://0.0.0.0:2375 info<br>docker -H tcp://0.0.0.0:2375  ps</p>
+</blockquote>
+<pre><code>#docker -H  tcp://143.248.xx.xx:2375  network inspect 7fc29599xxxx
+
+[
+{
+    &quot;Name&quot;: &quot;bridge&quot;,
+    &quot;Id&quot;: &quot;7xxx29599122f02cxxx1ea2c6fe09a984c3434xxx1f96e763605ad02291f3b3e&quot;,
+    &quot;Scope&quot;: &quot;local&quot;,
+    &quot;Driver&quot;: &quot;bridge&quot;,
+    &quot;IPAM&quot;: {
+        &quot;Driver&quot;: &quot;default&quot;,
+        &quot;Config&quot;: [
+            {
+                &quot;Subnet&quot;: &quot;172.17.0.0/16&quot;,
+                &quot;Gateway&quot;: &quot;172.17.x.x&quot;
+            }
+        ]
+    },
+    &quot;Containers&quot;: {
+        &quot;66569c38de1d4b12b2xxxxf675ebcc4a4fc56f9b6b14ea73axxxxxe2de9e503&quot;: {
+            &quot;EndpointID&quot;: &quot;xxx43511c5b1cd88xxx2ce12ee5f668f649b7b68dbxxxx13897263f8dbxxxx&quot;,
+            &quot;MacAddress&quot;: &quot;F2:42:ac:xx:00:01&quot;,
+            &quot;IPv4Address&quot;: &quot;172.17.0.1/16&quot;,
+            &quot;IPv6Address&quot;: &quot;&quot;
+        },
+        &quot;a9fba0edf2677404797ca7b2bfc7273f37a53fe4167c6f76388aaxxxxxxxxxxxx&quot;: {
+            &quot;EndpointID&quot;: &quot;cbef13f0075c8d6305a21de9135bff564642e35591b996a3e8a2b7b99d7b0a53&quot;,
+            &quot;MacAddress&quot;: &quot;xx:42:ac:xx:00:02&quot;,
+            &quot;IPv4Address&quot;: &quot;172.17.0.2/16&quot;,
+            &quot;IPv6Address&quot;: &quot;&quot;
+        }
+    },
+    &quot;Options&quot;: {
+        &quot;com.docker.network.bridge.default_bridge&quot;: &quot;true&quot;,
+        &quot;com.docker.network.bridge.enable_icc&quot;: &quot;true&quot;,
+        &quot;com.docker.network.bridge.enable_ip_masquerade&quot;: &quot;true&quot;,
+        &quot;com.docker.network.bridge.host_binding_ipv4&quot;: &quot;0.0.0.0&quot;,
+        &quot;com.docker.network.bridge.name&quot;: &quot;docker0&quot;,
+        &quot;com.docker.network.driver.mtu&quot;: &quot;1462&quot;
+    }
+}
+</code></pre><p>]</p>
+<h4 id="防御方案"><a href="#防御方案" class="headerlink" title="防御方案"></a>防御方案</h4><ul>
+<li><a href="https://docs.docker.com/engine/security/https/" target="_blank" rel="external">官方的解决方案 Protect the Docker daemon socket</a><br><a href="https://docs.docker.com/engine/security/https/" target="_blank" rel="external">https://docs.docker.com/engine/security/https/</a></li>
+<li><a href="http://longgeek.com/2014/09/14/docker-using-https/" target="_blank" rel="external">让 Docker 使用 HTTPS</a><br><a href="http://longgeek.com/2014/09/14/docker-using-https/" target="_blank" rel="external">http://longgeek.com/2014/09/14/docker-using-https/</a></li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>随手测试了一些国外的服务器, 命中率接近90%.</p>
+<img src="/2016/05/17/Docker未授权访问/4_LInux_Docker_test.png" alt="4_LInux_Docker_test.png" title="">
+<p>默认密码, <code>默认设置</code>, 这类问题看起来很简单, 但是危害确非常严重, 特别是网络未做隔离的情况下, 就能很轻松的打入企业内部.<br>做运维的同学更要注意些, 平时看起来没什么技术含量的小问题, 往往会成为安全的大问题.<br>题外话: 学技术还是老老实实看英文的吧. 很多年前流传的那个<code>心机黑客写运维教程</code>的梗,不是空穴来风的. </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://gnusec.github.io/2016/05/17/Docker未授权访问/" data-id="ciobldbcf000030v7lkapcv75" class="article-share-link" data-share="baidu">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/运维/">运维</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/01/关于RED-TEAM/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">关于RED TEAM</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
       
       <aside id="sidebar">
